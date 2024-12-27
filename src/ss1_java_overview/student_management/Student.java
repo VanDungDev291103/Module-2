@@ -3,27 +3,32 @@ package ss1_java_overview.student_management;
 import java.util.Scanner;
 
 public class Student {
-    int id;
     String name;
-    double score;
+    double mathScore; //điêm toan
+    double literatureScore; // điểm văn
 
-    void input(){
+    void inputStudent(){
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Vui lòng nhập vào id: ");
-        id = Integer.parseInt(sc.nextLine());
-
-        System.out.print("Vui lòng nhập vào tên: ");
+        System.out.print("Nhập tên: ");
         name = sc.nextLine();
 
-        System.out.print("Vui lòng nhập vào điểm: ");
-        score = Double.parseDouble(sc.nextLine());
+        System.out.print("Nhập điểm toán: ");
+        mathScore = Double.parseDouble(sc.nextLine());
+
+        System.out.print("Nhập điểm văn: ");
+        literatureScore = Double.parseDouble(sc.nextLine());
     }
 
-    void output(){
-        System.out.println("id = " + id);
-        System.out.println("name: " + name);
-        System.out.println("score: " + score);
+    double calAverageScore(){
+        return (mathScore + literatureScore)/2;
+    }
+
+    void outputStudent(){
+        System.out.println("Tên: " + name);
+        System.out.println("điểm toán: " + mathScore);
+        System.out.println("Điểm văn: " + literatureScore);
+        System.out.println("Điểm trung bình là: " + calAverageScore());
     }
 
 }
