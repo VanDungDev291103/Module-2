@@ -35,16 +35,16 @@ public class Fraction {
 
     // rút gọn phân số
     void simlifyFraction() {
-        int UCLN = UCLN(Math.abs(numerator), Math.abs(denominator));
-        numerator /= UCLN;
-        denominator /= UCLN;
+        int ucln = ucln(Math.abs(numerator), Math.abs(denominator));
+        numerator /= ucln;
+        denominator /= ucln;
         if (denominator < 0) {
             numerator = -numerator;
             denominator = -denominator;
         }
     }
 
-    int UCLN(int a, int b) {
+    int ucln(int a, int b) {
         while (b != 0) {
             int temp = b;
             b = a % b;
