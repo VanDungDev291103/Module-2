@@ -18,50 +18,50 @@ public class Main {
 
         int choose;
         while (true) {
-            do {
-                System.out.println("\n=========Chương trình quản lý điện thoại==============");
-                System.out.println("1. Xem danh sách điện thoại");
-                System.out.println("2. Thêm mới");
-                System.out.println("3. Cập nhật");
-                System.out.println("4. Xóa");
-                System.out.println("5. Sắp xếp theo giấ");
-                System.out.println("6. Tìm kiếm");
-                System.out.println("7. Tính tổng tiền");
-                System.out.println("8. Giảm giá cho điện thoại cũ");
-                System.out.println("9. Thoát");
+//            do {
+            System.out.println("\n=========Chương trình quản lý điện thoại==============");
+            System.out.println("1. Xem danh sách điện thoại");
+            System.out.println("2. Thêm mới");
+            System.out.println("3. Cập nhật");
+            System.out.println("4. Xóa");
+            System.out.println("5. Sắp xếp theo giấ");
+            System.out.println("6. Tìm kiếm");
+            System.out.println("7. Tính tổng tiền");
+            System.out.println("8. Giảm giá cho điện thoại cũ");
+            System.out.println("9. Thoát");
 
-                System.out.print("Bạn vui lòng chọn: ");
-                choose = Integer.parseInt(sc.nextLine());
+            System.out.print("Bạn vui lòng chọn: ");
+            choose = Integer.parseInt(sc.nextLine());
 
-                switch (choose) {
-                    case 1:
-                        menuShowlist();
-                        break;
-                    case 2:
-                        addNew();
-                        break;
-                    case 3:
-                        update();
-                        break;
-                    case 4:
-                        delete();
-                        break;
-                    case 5:
-                        break;
-                    case 6:
-                        searchPhone();
-                        break;
-                    case 7:
-                        break;
-                    case 8:
-                        break;
-                    case 9:
-                        return;
-                    default:
-                        System.out.println("lựa chọn không hợp lệ! vui lòng chọn lại");
-                }
+            switch (choose) {
+                case 1:
+                    menuShowlist();
+                    break;
+                case 2:
+                    addNew();
+                    break;
+                case 3:
+                    update();
+                    break;
+                case 4:
+                    delete();
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    searchPhone();
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    return;
+                default:
+                    System.out.println("lựa chọn không hợp lệ! vui lòng chọn lại");
+            }
 
-            } while (choose < 1 || choose > 9);
+//            } while (choose < 1 || choose > 9);
         }
     }
 
@@ -285,29 +285,30 @@ public class Main {
             if (!isExist) {
                 System.out.println("Không tìm thấy mã muốn cập nhật");
             }
-        }else {
+        } else {
             System.out.println("Mã không hợp lệ!");
         }
 
     }
 
     //4/ delete
-    public static void delete(){
+    public static void delete() {
+
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhập mã muốn xóa: ");
         String id = sc.nextLine();
 
-        if(id.startsWith("DTC")) {
+        if (id.startsWith("DTC")) {
             boolean isExist = false;
             for (OldPhone oldPhone : oldPhones) {
                 if (oldPhone.getId().equals(id)) {
                     isExist = true;
-                    System.out.printf("Bạn có xóa điện thoại có mã %s không ? ",id);
+                    System.out.printf("Bạn có xóa điện thoại có mã %s không ? ", id);
                     System.out.println("\nChọn yes để xác nhận xóa, no để hủy ");
                     if ("yes".equalsIgnoreCase(sc.nextLine())) {
                         oldPhones.remove(oldPhone);
                         System.out.println("Xóa thành công");
-                    }else{
+                    } else {
                         System.out.println("Đã hủy việc xóa");
                     }
                     break;
@@ -322,12 +323,12 @@ public class Main {
             for (NewPhone newPhone : newPhones) {
                 if (newPhone.getId().equals(id)) {
                     isExist = true;
-                    System.out.printf("Bạn có xóa điện thoại có mã %s không ? ",id);
+                    System.out.printf("Bạn có xóa điện thoại có mã %s không ? ", id);
                     System.out.println("\nChọn yes để xác nhận xóa, no để hủy ");
                     if ("yes".equalsIgnoreCase(sc.nextLine())) {
                         newPhones.remove(newPhone);
                         System.out.println("Xóa thành công");
-                    }else{
+                    } else {
                         System.out.println("Đã hủy việc xóa");
                     }
                     break;
