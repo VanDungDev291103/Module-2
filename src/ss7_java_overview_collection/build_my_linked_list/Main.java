@@ -58,5 +58,4 @@ public class Main {
         Integer lastIndexOfElement = myLinkedList.lastIndexOf(20);
         System.out.println("Vị trí index cuối cùng của phần tử 20 là: " + lastIndexOfElement);
     }
-    }
 }
