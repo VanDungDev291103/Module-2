@@ -54,5 +54,4 @@ public class Main {
         System.out.println("Danh sách sau khi xóa tất cả các phần tử có giá trị 10: " + myArrList.toString());
 
     }
-    }
 }
