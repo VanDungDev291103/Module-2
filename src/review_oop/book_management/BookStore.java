@@ -159,12 +159,15 @@ public class BookStore {
         }
     }
 
+    //6
     public static void displayAllBooks(){
         System.out.println("Danh sách tất cả sách");
         for(int i = 0; i < books.size(); i++){
             books.get(i).outputBook();
         }
     }
+
+
 
 
 }
